@@ -52,10 +52,12 @@ public class Tablero {
         imputJugador();
     }
 
-    private char imputJugador() {
+    private int imputJugador() {
         Scanner scanner = new Scanner(System.in);
-        char letra = scanner.next
-        return 'X';
+        String opcion = scanner.nextLine();
+        int pos = Integer.parseInt(opcion);
+
+        return 0;
     }
 
 
