@@ -12,7 +12,7 @@ public class Tablero {
     public void poblarMatriz(){
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[0].length; j++) {
-                tablero[i][j] = 'X';
+                tablero[i][j] = ' ';
             }
             System.out.println();
         }
@@ -49,13 +49,26 @@ public class Tablero {
     public void jugarTurno() {
         pintarTablero();
         tocaTurno();
-        imputJugador();
+        if (tocaTurno() == jugador1){
+            colocarFicha(imputJugador(),jugador1);
+        } else {
+            colocarFicha(imputJugador(),jugador2);
+        }
     }
 
-    private char imputJugador() {
+    private void colocarFicha(int i, Jugador jugador) {
+        for (int j = 0; j < tablero[0].length; j++) {
+            if (tablero[tablero[0].length-j][i] == ' '){
+                tablero[j][i] = jugador.getFicha();
+                break;
+            }
+        }
+    }
+
+    private int imputJugador() {
         Scanner scanner = new Scanner(System.in);
-        char letra = scanner.next
-        return 'X';
+        //char letra = scanner.next
+        return 3;
     }
 
 
