@@ -23,15 +23,15 @@ public class Tablero {
             System.out.print(i + " ");
         }
         System.out.println();
-        System.out.print("-".repeat(13));
-        System.out.println();
         for (int i = 0; i < tablero.length; i++) {
+            System.out.println("-".repeat(14));
             for (int j = 0; j < tablero[0].length; j++) {
-                System.out.print(tablero[i][j] + " ");
+                System.out.print(tablero[i][j] + "|");
+
             }
             System.out.println();
         }
-        System.out.println("-".repeat(13));
+        System.out.println("-".repeat(14));
     }
 
     private Jugador tocaTurno(){
@@ -55,6 +55,7 @@ public class Tablero {
             colocarFicha(imputJugador(),jugador2);
         }
     }
+
     private void colocarFicha(int i, Jugador jugador) {
         for (int j = 0; j < tablero[0].length; j++) {
             if (tablero[tablero[0].length-j][i] == ' '){
@@ -63,8 +64,10 @@ public class Tablero {
             }
         }
     }
+
     private int imputJugador() {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Elije una columna: ");
         String opcion = scanner.nextLine();
         int pos = Integer.parseInt(opcion);
         if (pos > 0 && pos <= tablero.length){
