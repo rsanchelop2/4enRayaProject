@@ -56,7 +56,12 @@ public class Tablero {
         Scanner scanner = new Scanner(System.in);
         String opcion = scanner.nextLine();
         int pos = Integer.parseInt(opcion);
-
+        if (pos > 0 && pos <= tablero.length){
+            return pos;
+        } else {
+            System.out.println("Elija una columna");
+            imputJugador();
+        }
         return 0;
     }
 
