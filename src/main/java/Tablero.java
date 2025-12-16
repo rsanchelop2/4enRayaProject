@@ -56,6 +56,7 @@ public class Tablero {
         }
     }
 
+<<<<<<< HEAD
     private void colocarFicha(int i, Jugador jugador) {
         for (int j = 0; j < tablero[0].length; j++) {
             if (tablero[tablero[0].length-j][i] == ' '){
@@ -69,6 +70,19 @@ public class Tablero {
         Scanner scanner = new Scanner(System.in);
         //char letra = scanner.next
         return 3;
+=======
+    private int imputJugador() {
+        Scanner scanner = new Scanner(System.in);
+        String opcion = scanner.nextLine();
+        int pos = Integer.parseInt(opcion);
+        if (pos > 0 && pos <= tablero.length){
+            return pos;
+        } else {
+            System.out.println("Elija una columna");
+            imputJugador();
+        }
+        return 0;
+>>>>>>> 404eee999f26573c554a979d0a6d9a48779a6424
     }
 
 
