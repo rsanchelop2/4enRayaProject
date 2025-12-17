@@ -56,7 +56,6 @@ public class Tablero {
         }
     }
 
-<<<<<<< HEAD
     private void colocarFicha(int i, Jugador jugador) {
         for (int j = 0; j < tablero[0].length; j++) {
             if (tablero[tablero[0].length-j][i] == ' '){
@@ -66,11 +65,7 @@ public class Tablero {
         }
     }
 
-    private int imputJugador() {
-        Scanner scanner = new Scanner(System.in);
-        //char letra = scanner.next
-        return 3;
-=======
+
     private int imputJugador() {
         Scanner scanner = new Scanner(System.in);
         String opcion = scanner.nextLine();
@@ -82,9 +77,82 @@ public class Tablero {
             imputJugador();
         }
         return 0;
->>>>>>> 404eee999f26573c554a979d0a6d9a48779a6424
     }
 
+    //TODO 01: Comprobar hacia que direccion estan las fichas
+    private int comprobarDireccion(Jugador jugador){
+        int posX = 1;
+        int posY = 1;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (i == posX && j == posY){
+                    continue;
+                }
+                if (i == jugador.getFicha()){
+
+                }
+            }
+        }
+
+        return 0;
+    }
+
+
+
+    //TODO 02: Hacer comprobracion de las fichas 2 posiciones hacia la direccion
+    private void comprobarRaya(int direccion, int posX, int posY, Jugador jugador){
+        int contador = 2;
+        switch(direccion) {
+            case 1:
+                for (int i = 0; i < 2 ; i++) {
+                    posX = posX - 1;
+                    posY = posY - 1;
+                    if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+
+                }
+                break;
+            case 2:
+
+                for (int i = 0; i < 2; i++) {
+                    posX = posX - 1;
+                }
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 3:
+
+                for (int i = 0; i < 2; i++) {
+
+
+                    posX = posX - 1;
+                    posY = posY + 1;
+                }
+
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 4:
+                posY = posY -1;
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 5:
+                posY = posY +1;
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 6:
+                posX = posX +1;
+                posY = posY -1;
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 7:
+                posX = posX +1;
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+                break;
+            case 8:
+                posX = posX +1;
+                posY = posY +1;
+                if(posX < 0  || posX > tablero.length || posY > tablero.length || posY < 0);
+        }
+
+    }
 
     public static void main(String[] args) {
         Tablero tablero1 = new Tablero();
