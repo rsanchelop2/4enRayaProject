@@ -56,6 +56,7 @@ public class Tablero {
         }
     }
 
+
     private void colocarFicha(int i, Jugador jugador) {
         for (int j = 0; j < tablero[0].length; j++) {
             if (tablero[tablero[0].length-j][i] == ' '){
@@ -64,7 +65,6 @@ public class Tablero {
             }
         }
     }
-
 
     private int imputJugador() {
         Scanner scanner = new Scanner(System.in);
@@ -78,6 +78,7 @@ public class Tablero {
         }
         return 0;
     }
+
 
     //TODO 01: Comprobar hacia que direccion estan las fichas
     private int comprobarDireccion(Jugador jugador){
@@ -153,6 +154,7 @@ public class Tablero {
         }
 
     }
+
 
     public static void main(String[] args) {
         Tablero tablero1 = new Tablero();
